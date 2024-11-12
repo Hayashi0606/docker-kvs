@@ -1,11 +1,13 @@
 pipeline {
   agent any
-  environment {
-    DOCKERHUB_USER = "Hayashi0606"
-    BUILD_HOST = "root@172.22.27.229"
-    PROD_HOST = "root@172.22.27.230"
-    BUILD_TIMESTAMP = sh(script: "date +%Y%m%d-%H%M%S", returnStdout: true).trim()
-  }
+ environment {
+   DOCKERHUB_USER = "Hayashi0606>"
+   BUILD_HOST = "root@172.22.27.229"
+   PROD_HOST = "root@172.22.27.230"
+   BUILD_TIMESTAMP = sh(script: "date +%Y%m%d-%H%M%S", returnStdout: true).trim()
+ }
+
+
   stages {
     stage('Pre Check') {
       steps {
